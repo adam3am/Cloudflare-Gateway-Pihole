@@ -10,7 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: repo-sync/github-sync@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
+      - name: Sync fork
+        uses: repo-sync/github-sync@v2
         with:
           source_repo: "luxysiv/Cloudflare-Gateway-Pihole"
           source_branch: "main"
